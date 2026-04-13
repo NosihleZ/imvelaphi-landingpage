@@ -9,394 +9,138 @@
 <meta property="og:image" content="https://imvelaphi.com/og-image.jpg"/>
 <meta property="og:url" content="https://imvelaphi.com"/>
 <meta name="twitter:card" content="summary_large_image"/>
-<title>Imvelaphi, Where Africa Remembers · Launching 29 April 2026</title>
+<title>Imvelaphi — Where Africa Remembers · Launching 29 April 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet"/>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
 :root{
-  --bg:#1A0A00;
-  --card:#2C1500;
-  --border:#3a1a00;
-  --gold:#C8860A;
-  --gold2:#E09B0C;
-  --cream:#FFF8F0;
-  --muted:#7a4a10;
-  --fh:'Playfair Display',serif;
-  --fb:'Cormorant Garamond',serif;
+  --bg:#1A0A00;--card:#2C1500;--border:#3a1a00;
+  --gold:#C8860A;--gold2:#E09B0C;--cream:#FFF8F0;--muted:#7a4a10;
+  --fh:'Playfair Display',serif;--fb:'Cormorant Garamond',serif;
 }
 html{scroll-behavior:smooth;}
-body{
-  background:var(--bg);
-  color:var(--cream);
-  font-family:var(--fb);
-  font-size:18px;
-  line-height:1.7;
-  overflow-x:hidden;
-}
-
-/* ── NOISE + GRAIN ─────────────────────────────── */
-body::before{
-  content:'';position:fixed;inset:0;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
-  pointer-events:none;z-index:0;opacity:0.5;
-}
-
-/* ── NAV ───────────────────────────────────────── */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:100;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:18px 40px;
-  background:rgba(26,10,0,0.85);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid rgba(58,26,0,0.6);
-  transition:padding 0.3s;
-}
-.nav-logo{
-  font-family:var(--fh);
-  font-size:20px;font-weight:400;
-  color:var(--gold);
-  letter-spacing:0.05em;
-}
+body{background:var(--bg);color:var(--cream);font-family:var(--fb);font-size:18px;line-height:1.7;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:0.5;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px 40px;background:rgba(26,10,0,0.88);backdrop-filter:blur(12px);border-bottom:1px solid rgba(58,26,0,0.6);}
+.nav-logo{font-family:var(--fh);font-size:20px;font-weight:400;color:var(--gold);}
 .nav-links{display:flex;gap:28px;align-items:center;}
-.nav-links a{
-  color:var(--muted);font-size:14px;
-  text-decoration:none;letter-spacing:0.08em;
-  font-family:var(--fb);font-weight:500;
-  text-transform:uppercase;
-  transition:color 0.2s;
-}
+.nav-links a{color:var(--muted);font-size:14px;text-decoration:none;letter-spacing:0.08em;font-family:var(--fb);font-weight:500;text-transform:uppercase;transition:color 0.2s;}
 .nav-links a:hover{color:var(--gold);}
-.nav-cta{
-  background:var(--gold);color:#1A0A00;
-  border:none;border-radius:24px;
-  padding:9px 22px;font-size:13px;
-  font-family:var(--fh);cursor:pointer;
-  letter-spacing:0.05em;
-  transition:background 0.2s;
-  text-decoration:none;
-  font-weight:500;
-}
+.nav-cta{background:var(--gold);color:#1A0A00;border:none;border-radius:24px;padding:9px 22px;font-size:13px;font-family:var(--fh);cursor:pointer;letter-spacing:0.05em;transition:background 0.2s;text-decoration:none;font-weight:500;}
 .nav-cta:hover{background:var(--gold2);}
-@media(max-width:600px){
-  nav{padding:16px 20px;}
-  .nav-links{gap:16px;}
-  .nav-links a{display:none;}
-}
+@media(max-width:600px){nav{padding:16px 20px;}.nav-links a{display:none;}}
 
-/* ── HERO ──────────────────────────────────────── */
-#hero{
-  position:relative;min-height:100vh;
-  display:flex;flex-direction:column;
-  align-items:center;justify-content:center;
-  text-align:center;padding:120px 24px 80px;
-  overflow:hidden;
-}
-.hero-glow{
-  position:absolute;
-  width:800px;height:800px;
-  border-radius:50%;
-  background:radial-gradient(circle,rgba(200,134,10,0.08) 0%,transparent 70%);
-  top:50%;left:50%;transform:translate(-50%,-50%);
-  pointer-events:none;
-  animation:breathe 6s ease-in-out infinite;
-}
-@keyframes breathe{
-  0%,100%{transform:translate(-50%,-50%) scale(1);opacity:1;}
-  50%{transform:translate(-50%,-50%) scale(1.08);opacity:0.7;}
-}
-.hero-eyebrow{
-  display:inline-block;
-  border:1px solid rgba(200,134,10,0.4);
-  color:var(--gold);font-size:12px;
-  letter-spacing:0.25em;text-transform:uppercase;
-  padding:7px 20px;border-radius:20px;
-  font-family:var(--fb);font-weight:500;
-  margin-bottom:36px;
-  animation:fadeUp 0.8s ease both;
-}
-h1.hero-title{
-  font-family:var(--fh);
-  font-size:clamp(48px,8vw,96px);
-  font-weight:400;color:var(--gold);
-  line-height:1.1;
-  margin-bottom:24px;
-  letter-spacing:-0.02em;
-  animation:fadeUp 0.8s 0.15s ease both;
-}
-.hero-sub{
-  font-family:var(--fb);
-  font-size:clamp(18px,2.5vw,24px);
-  font-weight:300;font-style:italic;
-  color:rgba(255,248,240,0.72);
-  max-width:640px;
-  margin:0 auto 48px;
-  line-height:1.75;
-  animation:fadeUp 0.8s 0.3s ease both;
-}
-.hero-actions{
-  display:flex;gap:16px;justify-content:center;
-  flex-wrap:wrap;
-  animation:fadeUp 0.8s 0.45s ease both;
-}
-.btn-primary{
-  background:var(--gold);color:#1A0A00;
-  border:none;border-radius:8px;
-  padding:16px 32px;font-size:17px;
-  font-family:var(--fh);cursor:pointer;
-  letter-spacing:0.03em;font-weight:500;
-  transition:background 0.2s,transform 0.1s;
-  text-decoration:none;display:inline-block;
-}
+/* HERO */
+#hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 24px 80px;overflow:hidden;}
+.hero-glow{position:absolute;width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(200,134,10,0.08) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;animation:breathe 6s ease-in-out infinite;}
+@keyframes breathe{0%,100%{transform:translate(-50%,-50%) scale(1);}50%{transform:translate(-50%,-50%) scale(1.08);}}
+.hero-eyebrow{display:inline-block;border:1px solid rgba(200,134,10,0.4);color:var(--gold);font-size:12px;letter-spacing:0.25em;text-transform:uppercase;padding:7px 20px;border-radius:20px;font-family:var(--fb);font-weight:500;margin-bottom:36px;animation:fadeUp 0.8s ease both;}
+h1.hero-title{font-family:var(--fh);font-size:clamp(48px,8vw,96px);font-weight:400;color:var(--gold);line-height:1.1;margin-bottom:24px;letter-spacing:-0.02em;animation:fadeUp 0.8s 0.15s ease both;}
+.hero-sub{font-family:var(--fb);font-size:clamp(18px,2.5vw,24px);font-weight:300;font-style:italic;color:rgba(255,248,240,0.72);max-width:640px;margin:0 auto 48px;line-height:1.75;animation:fadeUp 0.8s 0.3s ease both;}
+.hero-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;animation:fadeUp 0.8s 0.45s ease both;}
+.btn-primary{background:var(--gold);color:#1A0A00;border:none;border-radius:8px;padding:16px 32px;font-size:17px;font-family:var(--fh);cursor:pointer;letter-spacing:0.03em;font-weight:500;transition:background 0.2s;text-decoration:none;display:inline-block;}
 .btn-primary:hover{background:var(--gold2);}
-.btn-primary:active{transform:scale(0.99);}
-.btn-outline{
-  background:transparent;
-  border:1px solid rgba(200,134,10,0.4);
-  color:var(--gold);border-radius:8px;
-  padding:16px 32px;font-size:17px;
-  font-family:var(--fh);cursor:pointer;
-  letter-spacing:0.03em;
-  transition:all 0.2s;
-  text-decoration:none;display:inline-block;
-}
-.btn-outline:hover{
-  border-color:var(--gold);
-  background:rgba(200,134,10,0.08);
-}
+.btn-outline{background:transparent;border:1px solid rgba(200,134,10,0.4);color:var(--gold);border-radius:8px;padding:16px 32px;font-size:17px;font-family:var(--fh);cursor:pointer;letter-spacing:0.03em;transition:all 0.2s;text-decoration:none;display:inline-block;}
+.btn-outline:hover{border-color:var(--gold);background:rgba(200,134,10,0.08);}
+.counter-bar{display:flex;justify-content:center;gap:0;border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-top:48px;max-width:700px;width:100%;}
+.counter-item{flex:1;text-align:center;padding:20px 12px;border-right:1px solid var(--border);}
+.counter-item:last-child{border-right:none;}
+.counter-num{font-family:var(--fh);font-size:clamp(24px,4vw,40px);color:var(--gold);display:block;margin-bottom:4px;}
+.counter-label{font-size:11px;color:var(--muted);letter-spacing:0.12em;text-transform:uppercase;}
 
-/* ── COUNTDOWN ─────────────────────────────────── */
-#countdown-section{
-  padding:60px 24px;
-  text-align:center;
-  border-top:1px solid var(--border);
-  border-bottom:1px solid var(--border);
-  background:var(--card);
-  position:relative;z-index:1;
-}
-.countdown-label{
-  font-family:var(--fb);
-  font-size:13px;letter-spacing:0.2em;
-  color:var(--muted);text-transform:uppercase;
-  margin-bottom:24px;
-}
-.countdown-grid{
-  display:flex;gap:8px;justify-content:center;
-  flex-wrap:wrap;
-  margin-bottom:24px;
-}
-.countdown-unit{
-  background:var(--bg);
-  border:1px solid var(--border);
-  border-radius:10px;
-  padding:20px 24px;
-  min-width:90px;
-  text-align:center;
-}
-.countdown-num{
-  font-family:var(--fh);
-  font-size:clamp(36px,6vw,56px);
-  color:var(--gold);
-  display:block;line-height:1;
-  margin-bottom:6px;
-}
-.countdown-unit-label{
-  font-size:11px;color:var(--muted);
-  letter-spacing:0.15em;text-transform:uppercase;
-}
-.launch-date-text{
-  font-family:var(--fh);
-  font-size:clamp(20px,3vw,28px);
-  color:var(--cream);font-weight:400;
-}
+/* COUNTDOWN */
+#countdown-section{padding:60px 24px;text-align:center;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--card);position:relative;z-index:1;}
+.countdown-label{font-family:var(--fb);font-size:13px;letter-spacing:0.2em;color:var(--muted);text-transform:uppercase;margin-bottom:24px;}
+.countdown-grid{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:24px;}
+.countdown-unit{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:20px 24px;min-width:90px;text-align:center;}
+.countdown-num{font-family:var(--fh);font-size:clamp(36px,6vw,56px);color:var(--gold);display:block;line-height:1;margin-bottom:6px;}
+.countdown-unit-label{font-size:11px;color:var(--muted);letter-spacing:0.15em;text-transform:uppercase;}
+.launch-date-text{font-family:var(--fh);font-size:clamp(20px,3vw,28px);color:var(--cream);font-weight:400;}
 .launch-date-text em{color:var(--gold);font-style:normal;}
 
-/* ── SECTION BASE ──────────────────────────────── */
-section{
-  position:relative;z-index:1;
-  padding:100px 24px;
-  max-width:1100px;
-  margin:0 auto;
-}
-.section-eyebrow{
-  font-size:12px;letter-spacing:0.2em;
-  color:var(--muted);text-transform:uppercase;
-  font-family:var(--fb);font-weight:500;
-  margin-bottom:16px;
-  display:block;
-}
-h2.section-title{
-  font-family:var(--fh);
-  font-size:clamp(36px,5vw,54px);
-  font-weight:400;color:var(--gold);
-  line-height:1.15;margin-bottom:20px;
-}
-.section-body{
-  font-size:clamp(17px,2vw,21px);
-  font-weight:300;color:rgba(255,248,240,0.72);
-  max-width:600px;line-height:1.8;
-  font-style:italic;
-}
+/* SECTIONS */
+section{position:relative;z-index:1;padding:100px 24px;max-width:1100px;margin:0 auto;}
+.section-eyebrow{font-size:12px;letter-spacing:0.2em;color:var(--muted);text-transform:uppercase;font-family:var(--fb);font-weight:500;margin-bottom:16px;display:block;}
+h2.section-title{font-family:var(--fh);font-size:clamp(36px,5vw,54px);font-weight:400;color:var(--gold);line-height:1.15;margin-bottom:20px;}
+.section-body{font-size:clamp(17px,2vw,21px);font-weight:300;color:rgba(255,248,240,0.72);max-width:600px;line-height:1.8;font-style:italic;}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+@media(max-width:768px){.split{grid-template-columns:1fr;gap:40px;}}
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:24px;}
+.feature-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:32px 28px;transition:border-color 0.2s,transform 0.2s;}
+.feature-card:hover{border-color:rgba(200,134,10,0.4);transform:translateY(-2px);}
+.feature-icon{width:48px;height:48px;border-radius:50%;background:rgba(200,134,10,0.1);border:1px solid rgba(200,134,10,0.2);display:flex;align-items:center;justify-content:center;margin-bottom:20px;}
+.feature-card h3{font-family:var(--fh);font-size:22px;font-weight:400;color:var(--gold);margin-bottom:10px;}
+.feature-card p{font-size:16px;color:rgba(255,248,240,0.6);line-height:1.7;font-weight:300;}
 
-/* ── TWO-COL SPLIT ─────────────────────────────── */
-.split{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:64px;align-items:center;
-}
-@media(max-width:768px){
-  .split{grid-template-columns:1fr;gap:40px;}
-}
-
-/* ── FEATURE CARDS ─────────────────────────────── */
-.feature-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
-  gap:24px;
-}
-.feature-card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:14px;
-  padding:32px 28px;
-  transition:border-color 0.2s,transform 0.2s;
-}
-.feature-card:hover{
-  border-color:rgba(200,134,10,0.4);
-  transform:translateY(-2px);
-}
-.feature-icon{
-  width:48px;height:48px;
-  border-radius:50%;
-  background:rgba(200,134,10,0.1);
-  border:1px solid rgba(200,134,10,0.2);
-  display:flex;align-items:center;justify-content:center;
-  margin-bottom:20px;
-}
-.feature-icon svg{width:22px;height:22px;}
-.feature-card h3{
-  font-family:var(--fh);
-  font-size:22px;font-weight:400;
-  color:var(--gold);margin-bottom:10px;
-}
-.feature-card p{
-  font-size:16px;
-  color:rgba(255,248,240,0.6);
-  line-height:1.7;font-weight:300;
-}
-
-/* ── NAME GENERATOR EMBED ──────────────────────── */
-#name-section{
-  background:var(--card);
-  border-top:1px solid var(--border);
-  border-bottom:1px solid var(--border);
-  padding:100px 24px;
-}
-.gen-wrap{
-  max-width:1100px;margin:0 auto;
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:56px;align-items:start;
-}
-@media(max-width:768px){
-  .gen-wrap{grid-template-columns:1fr;}
-}
+/* NAME GENERATOR */
+#name-section{background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:100px 24px;}
+.gen-wrap{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
+@media(max-width:768px){.gen-wrap{grid-template-columns:1fr;}}
 .form-box{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:36px 32px;}
 .form-box h3{font-family:var(--fh);font-size:26px;font-weight:400;color:var(--gold);margin-bottom:6px;}
 .form-box .fsub{font-size:15px;color:var(--muted);font-style:italic;margin-bottom:28px;line-height:1.6;}
 .field{margin-bottom:18px;}
 label{display:block;font-size:11px;letter-spacing:0.18em;color:var(--muted);text-transform:uppercase;margin-bottom:7px;font-family:var(--fb);font-weight:500;}
-input[type=text],input[type=email],select,textarea{
-  width:100%;background:var(--card);
-  border:1px solid var(--border);color:var(--cream);
-  border-radius:8px;padding:12px 16px;
-  font-size:16px;font-family:var(--fb);
-  transition:border-color 0.2s;-webkit-appearance:none;
-}
-input[type=text]:focus,input[type=email]:focus,select:focus,textarea:focus{
-  outline:none;border-color:var(--gold);
-}
+input[type=text],input[type=email],select,textarea{width:100%;background:var(--card);border:1px solid var(--border);color:var(--cream);border-radius:8px;padding:12px 16px;font-size:16px;font-family:var(--fb);transition:border-color 0.2s;-webkit-appearance:none;}
+input[type=text]:focus,input[type=email]:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold);}
 input::placeholder,textarea::placeholder{color:var(--muted);opacity:0.6;font-style:italic;}
 select option{background:var(--card);color:var(--cream);}
 textarea{resize:vertical;min-height:80px;line-height:1.6;}
-.gen-btn{
-  width:100%;background:var(--gold);color:#1A0A00;
-  border:none;border-radius:8px;padding:14px 0;
-  font-size:17px;font-family:var(--fh);font-weight:500;
-  cursor:pointer;letter-spacing:0.04em;
-  transition:background 0.2s;margin-top:6px;
-}
+.gen-btn{width:100%;background:var(--gold);color:#1A0A00;border:none;border-radius:8px;padding:14px 0;font-size:17px;font-family:var(--fh);font-weight:500;cursor:pointer;letter-spacing:0.04em;transition:background 0.2s;margin-top:6px;}
 .gen-btn:hover{background:var(--gold2);}
+.gen-btn:disabled{background:var(--muted);cursor:wait;}
 .preview-box{position:sticky;top:90px;}
-.preview-box p.plabel{font-size:11px;letter-spacing:0.2em;color:var(--muted);text-transform:uppercase;margin-bottom:14px;text-align:center;}
+.preview-box .plabel{font-size:11px;letter-spacing:0.2em;color:var(--muted);text-transform:uppercase;margin-bottom:14px;text-align:center;}
 canvas#nc{width:100%;border-radius:12px;border:1px solid var(--border);display:block;}
-.dl-btn{
-  display:block;width:100%;
-  background:transparent;border:1px solid var(--gold);
-  color:var(--gold);border-radius:8px;padding:13px 0;
-  font-size:15px;font-family:var(--fh);cursor:pointer;
-  margin-top:12px;letter-spacing:0.04em;
-  transition:all 0.2s;text-align:center;
-}
-.dl-btn:hover{background:rgba(200,134,10,0.1);}
-.share-note{text-align:center;font-size:13px;color:var(--muted);margin-top:10px;font-style:italic;line-height:1.6;}
 
-/* ── HEARTBEAT CTA ─────────────────────────────── */
-#heartbeat-cta{
-  text-align:center;padding:100px 24px;
-  background:var(--bg);
-}
-.hb-card{
-  max-width:700px;margin:0 auto;
-  background:var(--card);border:1px solid var(--border);
-  border-radius:20px;padding:56px 48px;
-}
+/* SHARE BUTTONS */
+.action-row{display:flex;flex-direction:column;gap:10px;margin-top:14px;}
+.dl-btn{display:block;width:100%;background:var(--gold);color:#1A0A00;border:none;border-radius:8px;padding:13px 0;font-size:15px;font-family:var(--fh);cursor:pointer;letter-spacing:0.04em;transition:all 0.2s;text-align:center;font-weight:500;}
+.dl-btn:hover{background:var(--gold2);}
+.share-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;}
+.share-btn{border:1px solid var(--border);background:var(--card);color:var(--cream);border-radius:8px;padding:10px 4px;font-size:12px;font-family:var(--fb);cursor:pointer;text-align:center;transition:all 0.2s;display:flex;flex-direction:column;align-items:center;gap:4px;}
+.share-btn:hover{border-color:var(--gold);color:var(--gold);}
+.share-btn svg{width:18px;height:18px;}
+.share-note{text-align:center;font-size:12px;color:var(--muted);margin-top:8px;font-style:italic;line-height:1.6;}
+
+/* STATUS MESSAGES */
+.status-msg{display:none;padding:14px 18px;border-radius:8px;font-size:14px;margin-top:14px;line-height:1.6;}
+.status-msg.success{background:rgba(15,110,86,0.2);border:1px solid #0F6E56;color:#9FE1CB;}
+.status-msg.error{background:rgba(226,75,74,0.15);border:1px solid #E24B4A;color:#F09595;}
+.status-msg.loading{background:rgba(200,134,10,0.1);border:1px solid var(--border);color:var(--muted);}
+
+/* HEARTBEAT CTA */
+#heartbeat-cta{text-align:center;padding:100px 24px;background:var(--bg);}
+.hb-card{max-width:700px;margin:0 auto;background:var(--card);border:1px solid var(--border);border-radius:20px;padding:56px 48px;}
 @media(max-width:600px){.hb-card{padding:36px 24px;}}
 .hb-card h2{font-family:var(--fh);font-size:clamp(28px,4vw,42px);color:var(--gold);font-weight:400;margin-bottom:16px;line-height:1.2;}
 .hb-card p{font-size:clamp(16px,2vw,20px);color:rgba(255,248,240,0.65);font-weight:300;font-style:italic;line-height:1.8;margin-bottom:36px;}
 .flame-row{display:flex;justify-content:center;gap:8px;margin-bottom:32px;}
-.flame{width:12px;height:30px;border-radius:50% 50% 40% 40%;background:var(--gold);opacity:0.15;animation:flicker 2s ease-in-out infinite;}
-.flame:nth-child(2){height:40px;opacity:0.3;animation-delay:0.3s;}
-.flame:nth-child(3){height:50px;opacity:0.8;animation-delay:0s;}
-.flame:nth-child(4){height:40px;opacity:0.3;animation-delay:0.6s;}
-.flame:nth-child(5){height:12px;opacity:0.15;animation-delay:0.9s;}
-@keyframes flicker{0%,100%{transform:scaleY(1) scaleX(1);}50%{transform:scaleY(1.06) scaleX(0.96);}}
+.flame{border-radius:50% 50% 40% 40%;background:var(--gold);animation:flicker 2s ease-in-out infinite;}
+.flame:nth-child(1){width:10px;height:24px;opacity:0.15;animation-delay:0.8s;}
+.flame:nth-child(2){width:12px;height:36px;opacity:0.3;animation-delay:0.4s;}
+.flame:nth-child(3){width:16px;height:52px;opacity:0.9;}
+.flame:nth-child(4){width:12px;height:36px;opacity:0.3;animation-delay:0.6s;}
+.flame:nth-child(5){width:10px;height:24px;opacity:0.15;animation-delay:1s;}
+@keyframes flicker{0%,100%{transform:scaleY(1);}50%{transform:scaleY(1.08) scaleX(0.94);}}
 
-/* ── EMAIL CAPTURE ─────────────────────────────── */
-#notify{
-  background:var(--card);
-  border-top:1px solid var(--border);
-  padding:80px 24px;text-align:center;
-}
+/* EMAIL CAPTURE */
+#notify{background:var(--card);border-top:1px solid var(--border);padding:80px 24px;text-align:center;}
 .notify-inner{max-width:560px;margin:0 auto;}
 .notify-inner h2{font-family:var(--fh);font-size:clamp(28px,4vw,40px);color:var(--gold);font-weight:400;margin-bottom:12px;}
 .notify-inner p{font-size:18px;color:rgba(255,248,240,0.6);font-style:italic;margin-bottom:32px;line-height:1.7;}
 .email-form{display:flex;gap:10px;}
 .email-form input{flex:1;font-size:16px;}
-.email-btn{
-  background:var(--gold);color:#1A0A00;
-  border:none;border-radius:8px;
-  padding:12px 24px;font-size:15px;
-  font-family:var(--fh);cursor:pointer;
-  font-weight:500;white-space:nowrap;
-  transition:background 0.2s;
-}
+.email-btn{background:var(--gold);color:#1A0A00;border:none;border-radius:8px;padding:12px 24px;font-size:15px;font-family:var(--fh);cursor:pointer;font-weight:500;white-space:nowrap;transition:background 0.2s;}
 .email-btn:hover{background:var(--gold2);}
-.email-success{
-  color:#9FE1CB;font-size:14px;
-  margin-top:12px;font-style:italic;display:none;
-}
-.vip-perks{
-  display:flex;gap:24px;justify-content:center;
-  flex-wrap:wrap;margin-top:24px;
-}
+.email-btn:disabled{background:var(--muted);cursor:wait;}
+.email-success{color:#9FE1CB;font-size:14px;margin-top:12px;font-style:italic;display:none;}
+.vip-perks{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-top:24px;}
 .vip-perk{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:6px;}
 .vip-perk::before{content:'✦';color:var(--gold);font-size:10px;}
 
-/* ── FOOTER ────────────────────────────────────── */
-footer{
-  border-top:1px solid var(--border);
-  padding:40px 24px;
-  text-align:center;
-}
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:40px 24px;text-align:center;}
 .footer-logo{font-family:var(--fh);font-size:22px;color:var(--gold);margin-bottom:10px;}
 .footer-tagline{font-size:14px;color:var(--muted);font-style:italic;margin-bottom:20px;}
 .footer-links{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;}
@@ -404,180 +148,96 @@ footer{
 .footer-links a:hover{color:var(--gold);}
 .footer-copy{font-size:12px;color:rgba(122,74,16,0.5);margin-top:20px;}
 
-/* ── ANIMATIONS ────────────────────────────────── */
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(24px);}
-  to{opacity:1;transform:translateY(0);}
-}
-.reveal{
-  opacity:0;transform:translateY(28px);
-  transition:opacity 0.7s ease,transform 0.7s ease;
-}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease;}
 .reveal.visible{opacity:1;transform:translateY(0);}
-
-/* ── COUNTER BAR ───────────────────────────────── */
-.counter-bar{
-  display:flex;justify-content:center;gap:0;
-  border:1px solid var(--border);border-radius:12px;
-  overflow:hidden;margin-top:48px;
-}
-.counter-item{
-  flex:1;text-align:center;padding:20px 12px;
-  border-right:1px solid var(--border);
-}
-.counter-item:last-child{border-right:none;}
-.counter-num{font-family:var(--fh);font-size:clamp(24px,4vw,40px);color:var(--gold);display:block;margin-bottom:4px;}
-.counter-label{font-size:11px;color:var(--muted);letter-spacing:0.12em;text-transform:uppercase;}
 </style>
 </head>
 <body>
 
-<!-- ── NAV ── -->
+<!-- NAV -->
 <nav>
   <span class="nav-logo">Imvelaphi</span>
   <div class="nav-links">
     <a href="#features">The Archive</a>
     <a href="#name-section">Name Card</a>
-    <a href="#heartbeat-cta">Heartbeat Quiz</a>
+    <a href="heartbeat.html">Heartbeat Quiz</a>
     <a href="#notify" class="nav-cta">Get Early Access</a>
   </div>
 </nav>
 
-<!-- ── HERO ── -->
+<!-- HERO -->
 <section id="hero" style="max-width:100%;padding:120px 24px 80px;">
   <div class="hero-glow"></div>
   <span class="hero-eyebrow">Launching 29 April 2026</span>
   <h1 class="hero-title">Where Africa<br/>Remembers.</h1>
-  <p class="hero-sub">
-    The living archive of African names, elder voices,<br/>
-    stories, recipes, and cultural knowledge.<br/>
-    Built by Africans, for Africa; forever.
-  </p>
+  <p class="hero-sub">The living archive of African names, elder voices, stories, recipes, and cultural knowledge. Built by Africans, for Africa — forever.</p>
   <div class="hero-actions">
     <a href="#name-section" class="btn-primary">Generate Your Name Card</a>
-    <a href="#heartbeat-cta" class="btn-outline">Discover Your Cultural Heartbeat</a>
+    <a href="heartbeat.html" class="btn-outline">Discover Your Cultural Heartbeat</a>
   </div>
-  <div class="counter-bar reveal" style="max-width:700px;margin:64px auto 0;">
-    <div class="counter-item">
-      <span class="counter-num" id="h-names">0</span>
-      <span class="counter-label">Names Waiting</span>
-    </div>
-    <div class="counter-item">
-      <span class="counter-num" id="h-heartbeats">0</span>
-      <span class="counter-label">Heartbeats Discovered</span>
-    </div>
-    <div class="counter-item">
-      <span class="counter-num">54</span>
-      <span class="counter-label">Countries</span>
-    </div>
-    <div class="counter-item">
-      <span class="counter-num">∞</span>
-      <span class="counter-label">Years It Lasts</span>
-    </div>
+  <div class="counter-bar reveal">
+    <div class="counter-item"><span class="counter-num" id="h-names">—</span><span class="counter-label">Names Waiting</span></div>
+    <div class="counter-item"><span class="counter-num" id="h-beats">—</span><span class="counter-label">Heartbeats Taken</span></div>
+    <div class="counter-item"><span class="counter-num" id="h-keepers">—</span><span class="counter-label">Keepers Waiting</span></div>
+    <div class="counter-item"><span class="counter-num">∞</span><span class="counter-label">Years It Lasts</span></div>
   </div>
 </section>
 
-<!-- ── COUNTDOWN ── -->
+<!-- COUNTDOWN -->
 <div id="countdown-section">
   <p class="countdown-label">The archive opens in</p>
   <div class="countdown-grid">
-    <div class="countdown-unit"><span class="countdown-num" id="cd-days">00</span><span class="countdown-unit-label">Days</span></div>
-    <div class="countdown-unit"><span class="countdown-num" id="cd-hours">00</span><span class="countdown-unit-label">Hours</span></div>
-    <div class="countdown-unit"><span class="countdown-num" id="cd-mins">00</span><span class="countdown-unit-label">Minutes</span></div>
-    <div class="countdown-unit"><span class="countdown-num" id="cd-secs">00</span><span class="countdown-unit-label">Seconds</span></div>
+    <div class="countdown-unit"><span class="countdown-num" id="cd-d">00</span><span class="countdown-unit-label">Days</span></div>
+    <div class="countdown-unit"><span class="countdown-num" id="cd-h">00</span><span class="countdown-unit-label">Hours</span></div>
+    <div class="countdown-unit"><span class="countdown-num" id="cd-m">00</span><span class="countdown-unit-label">Minutes</span></div>
+    <div class="countdown-unit"><span class="countdown-num" id="cd-s">00</span><span class="countdown-unit-label">Seconds</span></div>
   </div>
-  <p class="launch-date-text">
-    <em>29 April 2026</em> — VIP Keepers get early access
-  </p>
+  <p class="launch-date-text"><em>29 April 2026</em> — VIP Keepers get early access on 27 April</p>
 </div>
 
-<!-- ── WHAT IS IMVELAPHI ── -->
+<!-- ABOUT -->
 <section id="about">
   <div class="split reveal">
     <div>
       <span class="section-eyebrow">The Archive</span>
       <h2 class="section-title">Africa has produced more knowledge than the world has been allowed to remember.</h2>
-      <p class="section-body">
-        Imvelaphi is where we take it back. A permanent, living archive
-        where African names, elder voices, proverbs, recipes, and stories
-        are collected, preserved, and celebrated, not as museum artefacts,
-        but as a fire that keeps burning.
-      </p>
+      <p class="section-body">Imvelaphi is where we take it back. A permanent, living archive — not a museum artefact, but a fire that keeps burning.</p>
     </div>
     <div>
-      <!-- Decorative quote card -->
       <div style="background:var(--card);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:14px;padding:36px 32px;">
-        <p style="font-family:var(--fh);font-size:clamp(22px,3vw,30px);color:var(--cream);font-style:italic;line-height:1.6;margin-bottom:20px;">
-          "When an old man dies, a library burns to the ground."
-        </p>
-        <p style="font-size:14px;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;">
-          Amadou Hampâté Bâ · Mali
-        </p>
+        <p style="font-family:var(--fh);font-size:clamp(22px,3vw,30px);color:var(--cream);font-style:italic;line-height:1.6;margin-bottom:20px;">"When an old man dies, a library burns to the ground."</p>
+        <p style="font-size:14px;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;">Amadou Hampâté Bâ · Mali</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── FEATURES ── -->
+<!-- FEATURES -->
 <section id="features" style="padding-top:0;">
   <div style="text-align:center;margin-bottom:56px;" class="reveal">
     <span class="section-eyebrow">What lives in the archive</span>
     <h2 class="section-title" style="margin:0 auto;">Four pillars of memory.</h2>
   </div>
   <div class="feature-grid">
-    <div class="feature-card reveal">
-      <div class="feature-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#C8860A" stroke-width="1.5">
-          <path d="M12 2L8 8H2l4.5 4-1.5 6L12 16l7 4-1.5-6L22 8h-6z"/>
-        </svg>
-      </div>
-      <h3>The Naming Wall</h3>
-      <p>A permanent monument of African names, their meanings, origins, and the stories of how they were given.</p>
-    </div>
-    <div class="feature-card reveal">
-      <div class="feature-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#C8860A" stroke-width="1.5">
-          <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
-        </svg>
-      </div>
-      <h3>Kuhifadhi Vault</h3>
-      <p>Video and audio recordings of African elders, their wisdom, languages, and lived knowledge preserved forever.</p>
-    </div>
-    <div class="feature-card reveal">
-      <div class="feature-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#C8860A" stroke-width="1.5">
-          <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
-        </svg>
-      </div>
-      <h3>Keepers Community</h3>
-      <p>A cultural dialogue feed where Keepers share stories, recipes, proverbs, and voice recordings every single day.</p>
-    </div>
-    <div class="feature-card reveal">
-      <div class="feature-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#C8860A" stroke-width="1.5">
-          <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
-        </svg>
-      </div>
-      <h3>The Gatherings</h3>
-      <p>Live events — the Indaba Yomlilo, where Keepers come together to record, share, and light the flame in person.</p>
-    </div>
+    <div class="feature-card reveal"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#C8860A" stroke-width="1.5"><path d="M12 2L8 8H2l4.5 4-1.5 6L12 16l7 4-1.5-6L22 8h-6z"/></svg></div><h3>The Naming Wall</h3><p>A permanent monument of African names — their meanings, origins, and the stories of how they were given.</p></div>
+    <div class="feature-card reveal"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#C8860A" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div><h3>Kuhifadhi Vault</h3><p>Video and audio recordings of African elders — their wisdom, languages, and lived knowledge preserved forever.</p></div>
+    <div class="feature-card reveal"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#C8860A" stroke-width="1.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div><h3>Keepers Community</h3><p>A cultural dialogue feed where Keepers share stories, recipes, proverbs, and voice recordings every single day.</p></div>
+    <div class="feature-card reveal"><div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#C8860A" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div><h3>The Gatherings</h3><p>Live events — the Indaba Yomlilo — where Keepers come together to record, share, and light the flame in person.</p></div>
   </div>
 </section>
 
-<!-- ── NAME CARD GENERATOR ── -->
+<!-- NAME CARD GENERATOR -->
 <div id="name-section">
   <div style="text-align:center;max-width:1100px;margin:0 auto 56px;" class="reveal">
     <span class="section-eyebrow">Pre-launch Exclusive</span>
     <h2 class="section-title" style="color:var(--gold);">Your name belongs in the archive.</h2>
-    <p class="section-body" style="margin:0 auto;font-style:italic;">
-      Generate your Name Card now. When the Naming Wall opens on 29 April,
-      your name will be archived permanently — not just downloaded, but preserved forever.
-    </p>
+    <p class="section-body" style="margin:0 auto;font-style:italic;">Generate your Name Card now. When the Naming Wall opens on 29 April, your name will be permanently archived — not just downloaded, but preserved forever.</p>
   </div>
   <div class="gen-wrap">
     <div class="form-box reveal">
       <h3>Generate Your Name Card</h3>
-      <p class="fsub">Fill in what you know. Every field adds to the archive.</p>
+      <p class="fsub">Fill in what you know. Every field is a piece of the archive.</p>
       <div class="field"><label>Your name *</label><input type="text" id="fn" placeholder="e.g. Nkosazana" maxlength="40"/></div>
       <div class="field"><label>Pronunciation</label><input type="text" id="fp" placeholder="e.g. n-ko-SAA-za-na"/></div>
       <div class="field"><label>Language *</label><input type="text" id="fl" placeholder="e.g. IsiZulu, Yoruba, Twi..."/></div>
@@ -586,79 +246,65 @@ footer{
         <label>Country *</label>
         <select id="fco">
           <option value="">Select country...</option>
-          <option>Algeria</option><option>Angola</option><option>Benin</option><option>Botswana</option>
-          <option>Burkina Faso</option><option>Burundi</option><option>Cabo Verde</option>
-          <option>Cameroon</option><option>Central African Republic</option><option>Chad</option>
-          <option>Comoros</option><option>Democratic Republic of the Congo</option>
-          <option>Republic of the Congo</option><option>Djibouti</option><option>Egypt</option>
-          <option>Equatorial Guinea</option><option>Eritrea</option><option>Eswatini</option>
-          <option>Ethiopia</option><option>Gabon</option><option>Gambia</option>
-          <option>Ghana</option><option>Guinea</option><option>Guinea-Bissau</option>
-          <option>Ivory Coast</option><option>Kenya</option><option>Lesotho</option>
-          <option>Liberia</option><option>Libya</option><option>Madagascar</option>
-          <option>Malawi</option><option>Mali</option><option>Mauritania</option>
-          <option>Mauritius</option><option>Morocco</option><option>Mozambique</option>
-          <option>Namibia</option><option>Niger</option><option>Nigeria</option>
-          <option>Rwanda</option><option>São Tomé and Príncipe</option><option>Senegal</option>
-          <option>Sierra Leone</option><option>Somalia</option><option>South Africa</option>
-          <option>South Sudan</option><option>Sudan</option><option>Tanzania</option>
-          <option>Togo</option><option>Tunisia</option><option>Uganda</option>
-          <option>Zambia</option><option>Zimbabwe</option>
-          <option>Outside Africa / Diaspora</option>
+          <option>Algeria</option><option>Angola</option><option>Benin</option><option>Botswana</option><option>Burkina Faso</option><option>Burundi</option><option>Cabo Verde</option><option>Cameroon</option><option>Central African Republic</option><option>Chad</option><option>Comoros</option><option>Democratic Republic of the Congo</option><option>Republic of the Congo</option><option>Djibouti</option><option>Egypt</option><option>Equatorial Guinea</option><option>Eritrea</option><option>Eswatini</option><option>Ethiopia</option><option>Gabon</option><option>Gambia</option><option>Ghana</option><option>Guinea</option><option>Guinea-Bissau</option><option>Ivory Coast</option><option>Kenya</option><option>Lesotho</option><option>Liberia</option><option>Libya</option><option>Madagascar</option><option>Malawi</option><option>Mali</option><option>Mauritania</option><option>Mauritius</option><option>Morocco</option><option>Mozambique</option><option>Namibia</option><option>Niger</option><option>Nigeria</option><option>Rwanda</option><option>São Tomé and Príncipe</option><option>Senegal</option><option>Sierra Leone</option><option>Somalia</option><option>South Africa</option><option>South Sudan</option><option>Sudan</option><option>Tanzania</option><option>Togo</option><option>Tunisia</option><option>Uganda</option><option>Zambia</option><option>Zimbabwe</option><option>Outside Africa / Diaspora</option>
         </select>
       </div>
       <div class="field"><label>What does your name mean? *</label><textarea id="fm" placeholder="e.g. Daughter of the Chiefs — a blessing given to those born to lead."></textarea></div>
       <div class="field"><label>Who gave you this name?</label><input type="text" id="fg" placeholder="e.g. My grandmother, on the morning I arrived."/></div>
-      <button class="gen-btn" onclick="genCard()">Generate My Name Card</button>
+      <div class="field"><label>Your email (to receive archive notification)</label><input type="email" id="fe" placeholder="your@email.com"/></div>
+      <button class="gen-btn" id="genbtn" onclick="genCard()">Generate &amp; Archive My Name</button>
+      <div class="status-msg" id="name-status"></div>
     </div>
     <div class="preview-box reveal">
-      <p class="plabel">Your Name Card — 1080×1080 · Ready to share</p>
+      <p class="plabel">Your Name Card Preview — 1080×1080</p>
       <canvas id="nc" width="1080" height="1080"></canvas>
-      <button class="dl-btn" onclick="dlCard()">Download &amp; Share</button>
-      <p class="share-note">
-        Share on WhatsApp, Instagram, Facebook &amp; X<br/>
-        Tag <strong style="color:var(--gold);">@imvelaphi</strong> · #NamingWall
-      </p>
+      <div class="action-row" id="card-actions" style="display:none;">
+        <button class="dl-btn" onclick="dlCard()">⬇ Download PNG</button>
+        <div class="share-grid">
+          <button class="share-btn" onclick="shareToWhatsApp()">
+            <svg viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+            WhatsApp
+          </button>
+          <button class="share-btn" onclick="shareToFacebook()">
+            <svg viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            Facebook
+          </button>
+          <button class="share-btn" onclick="shareToX()">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.258 5.63 5.906-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            X / Twitter
+          </button>
+          <button class="share-btn" onclick="shareToTikTok()">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.27 8.27 0 004.84 1.55V6.79a4.85 4.85 0 01-1.07-.1z"/></svg>
+            TikTok
+          </button>
+        </div>
+        <p class="share-note">Tag <strong style="color:var(--gold);">@imvelaphi</strong> · #NamingWall · #WhereAfricaRemembers</p>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- ── CULTURAL HEARTBEAT CTA ── -->
+<!-- HEARTBEAT CTA -->
 <div id="heartbeat-cta">
   <div class="hb-card reveal">
-    <div class="flame-row">
-      <div class="flame"></div><div class="flame"></div>
-      <div class="flame"></div><div class="flame"></div><div class="flame"></div>
-    </div>
+    <div class="flame-row"><div class="flame"></div><div class="flame"></div><div class="flame"></div><div class="flame"></div><div class="flame"></div></div>
     <h2>Discover Your<br/>Cultural Heartbeat</h2>
-    <p>
-      Seven questions. Ninety seconds. A mirror that shows you
-      which African cultural current runs through your soul.
-      Not a test — a recognition.
-    </p>
+    <p>Seven questions. Ninety seconds. A mirror that shows you which African cultural current runs through your soul. Not a test — a recognition.</p>
     <a href="heartbeat.html" class="btn-primary">Take the Quiz →</a>
-    <p style="font-size:13px;color:var(--muted);margin-top:20px;font-style:italic;">
-      Your result is a shareable card — and a reserved place in the archive.
-    </p>
+    <p style="font-size:13px;color:var(--muted);margin-top:20px;font-style:italic;">Your result is a shareable card — and a reserved place in the archive.</p>
   </div>
 </div>
 
-<!-- ── EMAIL CAPTURE ── -->
+<!-- EMAIL CAPTURE -->
 <div id="notify">
   <div class="notify-inner reveal">
     <h2>Become a VIP Keeper.</h2>
-    <p>
-      Join the archive before it opens. VIP Keepers get early access
-      on 27 April: two days before the world. Plus a permanent
-      founding badge in the archive.
-    </p>
+    <p>Join the archive before it opens. VIP Keepers get early access on 27 April — two days before the world. Plus a permanent founding badge.</p>
     <div class="email-form">
       <input type="email" id="ne" placeholder="your@email.com"/>
-      <button class="email-btn" onclick="saveEmail()">Claim My Place</button>
+      <button class="email-btn" id="notify-btn" onclick="saveEmail()">Claim My Place</button>
     </div>
-    <p class="email-success" id="es">
-      ✦ You are now a founding Keeper. We will reach you before launch.
-    </p>
+    <p class="email-success" id="es">✦ You are now a founding Keeper. Check your email — we have sent you a confirmation.</p>
     <div class="vip-perks">
       <span class="vip-perk">Early access 27 April</span>
       <span class="vip-perk">Founding Keeper badge</span>
@@ -668,192 +314,253 @@ footer{
   </div>
 </div>
 
-<!-- ── FOOTER ── -->
+<!-- FOOTER -->
 <footer>
   <p class="footer-logo">Imvelaphi</p>
   <p class="footer-tagline">Where Africa Remembers</p>
   <div class="footer-links">
-    <a href="#about">About</a>
-    <a href="#features">The Archive</a>
-    <a href="#name-section">Name Card</a>
-    <a href="heartbeat.html">Heartbeat Quiz</a>
-    <a href="#notify">Early Access</a>
-    <a href="mailto:hello@imvelaphi.com">Contact</a>
+    <a href="#about">About</a><a href="#features">The Archive</a>
+    <a href="#name-section">Name Card</a><a href="heartbeat.html">Heartbeat Quiz</a>
+    <a href="#notify">Early Access</a><a href="mailto:hello@imvelaphi.com">Contact</a>
   </div>
   <p class="footer-copy">© 2026 Imvelaphi. All rights reserved. · imvelaphi.com</p>
 </footer>
 
 <script>
-// ── COUNTDOWN ────────────────────────────────────────────────
-function tick(){
-  const launch = new Date('2026-04-29T00:00:00+02:00').getTime();
-  const now    = Date.now();
-  const diff   = Math.max(0, launch - now);
-  const d = Math.floor(diff/86400000);
-  const h = Math.floor((diff%86400000)/3600000);
-  const m = Math.floor((diff%3600000)/60000);
-  const s = Math.floor((diff%60000)/1000);
-  document.getElementById('cd-days').textContent  = String(d).padStart(2,'0');
-  document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
-  document.getElementById('cd-mins').textContent  = String(m).padStart(2,'0');
-  document.getElementById('cd-secs').textContent  = String(s).padStart(2,'0');
-}
-tick(); setInterval(tick,1000);
+// ── CONFIG ────────────────────────────────────────────────────
+const WP_API  = 'https://imvelaphi.com/wp-json/imvelaphi/v1';
+const SITE_URL= 'https://imvelaphi.com';
+const SHARE_TEXT = '🌍 My name is in the Imvelaphi Naming Wall — the living archive of African names, stories and cultural knowledge. Generate yours before the archive opens on 29 April 2026.';
 
-// ── COUNTERS ─────────────────────────────────────────────────
-function updateHeroCounters(){
-  const n = parseInt(localStorage.getItem('imp_names')||'0');
-  const b = parseInt(localStorage.getItem('imp_beats')||'0');
-  document.getElementById('h-names').textContent      = n.toLocaleString();
-  document.getElementById('h-heartbeats').textContent = b.toLocaleString();
+// ── LIVE STATS ────────────────────────────────────────────────
+async function loadStats(){
+  try{
+    const r = await fetch(`${WP_API}/landing-stats`);
+    const d = await r.json();
+    document.getElementById('h-names').textContent   = (d.names_submitted   ||0).toLocaleString();
+    document.getElementById('h-beats').textContent   = (d.heartbeats_taken  ||0).toLocaleString();
+    document.getElementById('h-keepers').textContent = (d.keepers_waiting   ||0).toLocaleString();
+  }catch(e){
+    // Fallback to localStorage while WP endpoint isn't live yet
+    document.getElementById('h-names').textContent   = (parseInt(localStorage.getItem('imp_names')||'0')).toLocaleString();
+    document.getElementById('h-beats').textContent   = (parseInt(localStorage.getItem('imp_beats')||'0')).toLocaleString();
+    document.getElementById('h-keepers').textContent = JSON.parse(localStorage.getItem('imp_notify')||'[]').length.toLocaleString();
+  }
 }
-updateHeroCounters();
+loadStats();
+
+// ── COUNTDOWN ─────────────────────────────────────────────────
+function tick(){
+  const t=Math.max(0,new Date('2026-04-29T00:00:00+02:00')-Date.now());
+  document.getElementById('cd-d').textContent=String(Math.floor(t/86400000)).padStart(2,'0');
+  document.getElementById('cd-h').textContent=String(Math.floor(t%86400000/3600000)).padStart(2,'0');
+  document.getElementById('cd-m').textContent=String(Math.floor(t%3600000/60000)).padStart(2,'0');
+  document.getElementById('cd-s').textContent=String(Math.floor(t%60000/1000)).padStart(2,'0');
+}
+tick();setInterval(tick,1000);
 
 // ── SCROLL REVEAL ─────────────────────────────────────────────
-const obs = new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
-},{threshold:0.12});
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:0.12});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
-// ── EMAIL CAPTURE ─────────────────────────────────────────────
-function saveEmail(){
-  const email = document.getElementById('ne').value.trim();
-  if(!email||!email.includes('@')) return;
-  // ── CONNECT TO WORDPRESS ─────────────────────────────────
-  // Replace the localStorage line below with a fetch to your WP endpoint:
-  // fetch('https://imvelaphi.com/wp-json/imvelaphi/v1/early-access', {
-  //   method:'POST',
-  //   headers:{'Content-Type':'application/json'},
-  //   body: JSON.stringify({ email })
-  // });
-  const list = JSON.parse(localStorage.getItem('imp_notify')||'[]');
-  if(!list.includes(email)) list.push(email);
-  localStorage.setItem('imp_notify', JSON.stringify(list));
-  document.getElementById('es').style.display='block';
-  document.getElementById('ne').value='';
-}
-
-// ── NAME CARD CANVAS ──────────────────────────────────────────
-const canvas = document.getElementById('nc');
-const ctx    = canvas.getContext('2d');
+// ── CANVAS ────────────────────────────────────────────────────
+const canvas=document.getElementById('nc');
+const ctx=canvas.getContext('2d');
 const W=1080,H=1080;
-canvas.width=W; canvas.height=H;
-
+canvas.width=W;canvas.height=H;
 const C={bg:'#1A0A00',gold:'#C8860A',cream:'#FFF8F0',muted:'#7a4a10'};
-function hex2rgba(h,a){
-  const r=parseInt(h.slice(1,3),16),g=parseInt(h.slice(3,5),16),b=parseInt(h.slice(5,7),16);
-  return `rgba(${r},${g},${b},${a})`;
-}
-function wrapText(ctx,text,x,y,maxW,lh){
-  if(!text) return y;
-  const words=text.split(' '); let line='';
-  for(let w of words){
-    const t=line?line+' '+w:w;
-    if(ctx.measureText(t).width>maxW&&line){ctx.fillText(line,x,y);line=w;y+=lh;}
-    else{line=t;}
-  }
-  if(line)ctx.fillText(line,x,y);
-  return y+lh;
-}
-function diamond(ctx,x,y,s){
-  ctx.save();ctx.translate(x,y);ctx.rotate(Math.PI/4);
-  ctx.fillStyle=C.gold;ctx.fillRect(-s/2,-s/2,s,s);ctx.restore();
-}
-function rrect(ctx,x,y,w,h,r){
-  ctx.beginPath();
-  ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);ctx.arcTo(x+w,y,x+w,y+r,r);
-  ctx.lineTo(x+w,y+h-r);ctx.arcTo(x+w,y+h,x+w-r,y+h,r);
-  ctx.lineTo(x+r,y+h);ctx.arcTo(x,y+h,x,y+h-r,r);
-  ctx.lineTo(x,y+r);ctx.arcTo(x,y,x+r,y,r);ctx.closePath();
-}
-function corner(ctx,x,y,sz,fx,fy){
-  ctx.save();ctx.translate(x,y);ctx.scale(fx?-1:1,fy?-1:1);
-  ctx.strokeStyle=hex2rgba(C.gold,0.5);ctx.lineWidth=1.5;
-  ctx.beginPath();ctx.moveTo(0,sz);ctx.lineTo(0,0);ctx.lineTo(sz,0);ctx.stroke();
-  ctx.fillStyle=hex2rgba(C.gold,0.4);ctx.beginPath();ctx.arc(8,8,2,0,Math.PI*2);ctx.fill();
-  ctx.restore();
-}
+function h2r(h,a){const r=parseInt(h.slice(1,3),16),g=parseInt(h.slice(3,5),16),b=parseInt(h.slice(5,7),16);return `rgba(${r},${g},${b},${a})`;}
+function wrapText(ctx,text,x,y,mw,lh){if(!text)return y;const ws=text.split(' ');let line='';for(let w of ws){const t=line?line+' '+w:w;if(ctx.measureText(t).width>mw&&line){ctx.fillText(line,x,y);line=w;y+=lh;}else line=t;}if(line)ctx.fillText(line,x,y);return y+lh;}
+function diamond(ctx,x,y,s){ctx.save();ctx.translate(x,y);ctx.rotate(Math.PI/4);ctx.fillStyle=C.gold;ctx.fillRect(-s/2,-s/2,s,s);ctx.restore();}
+function rrect(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);ctx.arcTo(x+w,y,x+w,y+r,r);ctx.lineTo(x+w,y+h-r);ctx.arcTo(x+w,y+h,x+w-r,y+h,r);ctx.lineTo(x+r,y+h);ctx.arcTo(x,y+h,x,y+h-r,r);ctx.lineTo(x,y+r);ctx.arcTo(x,y,x+r,y,r);ctx.closePath();}
+function corner(ctx,x,y,sz,fx,fy){ctx.save();ctx.translate(x,y);ctx.scale(fx?-1:1,fy?-1:1);ctx.strokeStyle=h2r(C.gold,0.5);ctx.lineWidth=1.5;ctx.beginPath();ctx.moveTo(0,sz);ctx.lineTo(0,0);ctx.lineTo(sz,0);ctx.stroke();ctx.fillStyle=h2r(C.gold,0.4);ctx.beginPath();ctx.arc(8,8,2,0,Math.PI*2);ctx.fill();ctx.restore();}
 
+let lastCardData=null;
 function drawNameCard(d){
+  lastCardData=d;
   ctx.clearRect(0,0,W,H);
-  ctx.fillStyle=C.bg; ctx.fillRect(0,0,W,H);
-  const vg=ctx.createRadialGradient(W/2,H/2,W*0.2,W/2,H/2,W*0.85);
-  vg.addColorStop(0,'rgba(0,0,0,0)');vg.addColorStop(1,'rgba(0,0,0,0.45)');
-  ctx.fillStyle=vg;ctx.fillRect(0,0,W,H);
-  const cg=ctx.createRadialGradient(W/2,H/2,0,W/2,H/2,W*0.6);
-  cg.addColorStop(0,hex2rgba(C.gold,0.06));cg.addColorStop(1,'rgba(0,0,0,0)');
-  ctx.fillStyle=cg;ctx.fillRect(0,0,W,H);
-  ctx.strokeStyle=hex2rgba(C.gold,0.35);ctx.lineWidth=2;rrect(ctx,40,40,W-80,H-80,20);ctx.stroke();
-  ctx.strokeStyle=hex2rgba(C.gold,0.12);ctx.lineWidth=1;rrect(ctx,56,56,W-112,H-112,14);ctx.stroke();
-  corner(ctx,60,60,40,false,false);corner(ctx,W-60,60,40,true,false);
-  corner(ctx,60,H-60,40,false,true);corner(ctx,W-60,H-60,40,true,true);
-  ctx.font='500 22px "Cormorant Garamond",serif';
-  ctx.fillStyle=hex2rgba(C.gold,0.7);ctx.textAlign='center';
-  ctx.fillText('IMVELAPHI',W/2,130);
-  ctx.strokeStyle=hex2rgba(C.gold,0.3);ctx.lineWidth=1;
-  ctx.beginPath();ctx.moveTo(W/2-80,148);ctx.lineTo(W/2+80,148);ctx.stroke();
+  ctx.fillStyle=C.bg;ctx.fillRect(0,0,W,H);
+  const vg=ctx.createRadialGradient(W/2,H/2,W*0.2,W/2,H/2,W*0.85);vg.addColorStop(0,'rgba(0,0,0,0)');vg.addColorStop(1,'rgba(0,0,0,0.45)');ctx.fillStyle=vg;ctx.fillRect(0,0,W,H);
+  const cg=ctx.createRadialGradient(W/2,H/2,0,W/2,H/2,W*0.6);cg.addColorStop(0,h2r(C.gold,0.06));cg.addColorStop(1,'rgba(0,0,0,0)');ctx.fillStyle=cg;ctx.fillRect(0,0,W,H);
+  ctx.strokeStyle=h2r(C.gold,0.35);ctx.lineWidth=2;rrect(ctx,40,40,W-80,H-80,20);ctx.stroke();
+  ctx.strokeStyle=h2r(C.gold,0.12);ctx.lineWidth=1;rrect(ctx,56,56,W-112,H-112,14);ctx.stroke();
+  corner(ctx,60,60,40,false,false);corner(ctx,W-60,60,40,true,false);corner(ctx,60,H-60,40,false,true);corner(ctx,W-60,H-60,40,true,true);
+  ctx.font='500 22px "Cormorant Garamond",serif';ctx.fillStyle=h2r(C.gold,0.7);ctx.textAlign='center';ctx.fillText('IMVELAPHI',W/2,130);
+  ctx.strokeStyle=h2r(C.gold,0.3);ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(W/2-80,148);ctx.lineTo(W/2+80,148);ctx.stroke();
   diamond(ctx,W/2,160,5);
   const name=d.name||'Your Name';
   const nfs=name.length>14?82:name.length>10?94:110;
-  ctx.font=`400 ${nfs}px "Playfair Display",serif`;
-  ctx.fillStyle=C.gold;ctx.textAlign='center';ctx.fillText(name,W/2,340);
-  if(d.pron){ctx.font='italic 300 26px "Cormorant Garamond",serif';ctx.fillStyle=hex2rgba(C.cream,0.5);ctx.fillText(`/ ${d.pron} /`,W/2,392);}
-  ctx.strokeStyle=hex2rgba(C.gold,0.4);ctx.lineWidth=1;
-  ctx.beginPath();ctx.moveTo(W/2-140,418);ctx.lineTo(W/2+140,418);ctx.stroke();
-  diamond(ctx,W/2,418,4);
+  ctx.font=`400 ${nfs}px "Playfair Display",serif`;ctx.fillStyle=C.gold;ctx.textAlign='center';ctx.fillText(name,W/2,340);
+  if(d.pron){ctx.font='italic 300 26px "Cormorant Garamond",serif';ctx.fillStyle=h2r(C.cream,0.5);ctx.fillText(`/ ${d.pron} /`,W/2,392);}
+  ctx.strokeStyle=h2r(C.gold,0.4);ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(W/2-140,418);ctx.lineTo(W/2+140,418);ctx.stroke();diamond(ctx,W/2,418,4);
   ctx.font='500 17px "Cormorant Garamond",serif';ctx.fillStyle=C.muted;ctx.textAlign='center';
   const meta=[d.cult,d.lang,d.country].filter(Boolean).join('  ✦  ');
   ctx.fillText(meta.toUpperCase(),W/2,458);
-  ctx.font='italic 300 20px "Cormorant Garamond",serif';ctx.fillStyle=hex2rgba(C.gold,0.55);
-  ctx.fillText('meaning',W/2,510);
-  ctx.font='italic 400 28px "Playfair Display",serif';ctx.fillStyle=hex2rgba(C.cream,0.9);ctx.textAlign='center';
+  ctx.font='italic 300 20px "Cormorant Garamond",serif';ctx.fillStyle=h2r(C.gold,0.55);ctx.fillText('meaning',W/2,510);
+  ctx.font='italic 400 28px "Playfair Display",serif';ctx.fillStyle=h2r(C.cream,0.9);ctx.textAlign='center';
   const meaning=d.meaning||'A name that carries the world.';
   let my=wrapText(ctx,`"${meaning}"`,W/2,558,W-200,44);
-  if(d.giver){ctx.font='italic 300 19px "Cormorant Garamond",serif';ctx.fillStyle=hex2rgba(C.cream,0.4);ctx.fillText(`Given by ${d.giver}`,W/2,my+10);}
-  ctx.strokeStyle=hex2rgba(C.gold,0.3);ctx.lineWidth=1;
-  ctx.beginPath();ctx.moveTo(W/2-140,H-160);ctx.lineTo(W/2+140,H-160);ctx.stroke();
-  diamond(ctx,W/2,H-160,4);
-  ctx.font='400 17px "Cormorant Garamond",serif';ctx.fillStyle=hex2rgba(C.gold,0.5);
+  if(d.giver){ctx.font='italic 300 19px "Cormorant Garamond",serif';ctx.fillStyle=h2r(C.cream,0.4);ctx.fillText(`Given by ${d.giver}`,W/2,my+10);}
+  ctx.strokeStyle=h2r(C.gold,0.3);ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(W/2-140,H-160);ctx.lineTo(W/2+140,H-160);ctx.stroke();diamond(ctx,W/2,H-160,4);
+  ctx.font='400 17px "Cormorant Garamond",serif';ctx.fillStyle=h2r(C.gold,0.5);
   ctx.fillText('IMVELAPHI.COM  ·  THE NAMING WALL  ·  29 APRIL 2026',W/2,H-110);
-  ctx.font='italic 300 16px "Cormorant Garamond",serif';ctx.fillStyle=hex2rgba(C.cream,0.3);
+  ctx.font='italic 300 16px "Cormorant Garamond",serif';ctx.fillStyle=h2r(C.cream,0.3);
   ctx.fillText('Where Africa Remembers',W/2,H-78);
 }
+drawNameCard({name:'Your Name',pron:'',lang:'Your Language',cult:'Your Culture',country:'',meaning:'The meaning of your name lives here — a story that has waited to be told.',giver:''});
 
-// Default card
-drawNameCard({name:'Your Name',pron:'',lang:'Your Language',cult:'Your Culture',country:'',meaning:'The meaning of your name lives here.',giver:''});
-
-function genCard(){
-  const d={
-    name:document.getElementById('fn').value.trim(),
-    pron:document.getElementById('fp').value.trim(),
-    lang:document.getElementById('fl').value.trim(),
-    cult:document.getElementById('fc').value.trim(),
-    country:document.getElementById('fco').value,
-    meaning:document.getElementById('fm').value.trim(),
-    giver:document.getElementById('fg').value.trim(),
-  };
-  if(!d.name){document.getElementById('fn').focus();document.getElementById('fn').style.borderColor='var(--gold)';return;}
-  drawNameCard(d);
-  // Increment counter
-  const n=parseInt(localStorage.getItem('imp_names')||'0')+1;
-  localStorage.setItem('imp_names',n);
-  document.getElementById('h-names').textContent=n.toLocaleString();
-  // Save submission
-  const sub=JSON.parse(localStorage.getItem('imp_subs')||'[]');
-  sub.push({...d,ts:Date.now()});
-  localStorage.setItem('imp_subs',JSON.stringify(sub));
-  // Scroll to card on mobile
-  if(window.innerWidth<768){document.getElementById('nc').scrollIntoView({behavior:'smooth',block:'center'});}
+// ── GENERATE + SAVE TO WORDPRESS ─────────────────────────────
+function showStatus(id, type, msg){
+  const el=document.getElementById(id);
+  el.className='status-msg '+type;
+  el.textContent=msg;
+  el.style.display='block';
 }
 
+async function genCard(){
+  const d={
+    name:    document.getElementById('fn').value.trim(),
+    pron:    document.getElementById('fp').value.trim(),
+    lang:    document.getElementById('fl').value.trim(),
+    cult:    document.getElementById('fc').value.trim(),
+    country: document.getElementById('fco').value,
+    meaning: document.getElementById('fm').value.trim(),
+    giver:   document.getElementById('fg').value.trim(),
+    email:   document.getElementById('fe').value.trim(),
+  };
+
+  if(!d.name){
+    document.getElementById('fn').focus();
+    document.getElementById('fn').style.borderColor='var(--gold)';
+    return;
+  }
+
+  // Draw card immediately — don't wait for server
+  drawNameCard(d);
+  document.getElementById('card-actions').style.display='flex';
+  document.getElementById('card-actions').style.flexDirection='column';
+
+  // Disable button while saving
+  const btn=document.getElementById('genbtn');
+  btn.disabled=true;btn.textContent='Saving to archive...';
+  showStatus('name-status','loading','Saving your name to the archive...');
+
+  try{
+    const res=await fetch(`${WP_API}/save-name`,{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        name:         d.name,
+        pronunciation:d.pron,
+        language:     d.lang,
+        culture:      d.cult,
+        country:      d.country,
+        meaning:      d.meaning,
+        giver:        d.giver,
+        submitter_email: d.email,
+      }),
+    });
+    const json=await res.json();
+    if(json.success){
+      const msg = json.duplicate
+        ? '✦ This name is already in the archive. It will appear on the Naming Wall at launch.'
+        : '✦ Your name has been saved. It will appear on the Naming Wall after review — permanently archived on 29 April.';
+      showStatus('name-status','success', msg);
+      // Update local counter
+      if(!json.duplicate){
+        localStorage.setItem('imp_names',(parseInt(localStorage.getItem('imp_names')||'0')+1));
+      }
+    } else {
+      showStatus('name-status','error', json.message||'Something went wrong. Your card is still ready to download and share.');
+    }
+  }catch(e){
+    // WP not live yet — save locally as fallback
+    const sub=JSON.parse(localStorage.getItem('imp_subs')||'[]');
+    sub.push({...d,ts:Date.now()});
+    localStorage.setItem('imp_subs',JSON.stringify(sub));
+    showStatus('name-status','success','✦ Your name has been saved locally. It will be transferred to the archive when the platform goes live on 29 April.');
+  }finally{
+    btn.disabled=false;
+    btn.textContent='Generate & Archive My Name';
+  }
+
+  if(window.innerWidth<768)document.getElementById('nc').scrollIntoView({behavior:'smooth',block:'center'});
+}
+
+// ── DOWNLOAD ─────────────────────────────────────────────────
 function dlCard(){
-  const name=document.getElementById('fn').value.trim()||'imvelaphi';
+  const name=document.getElementById('fn').value.trim()||'imvelaphi-name';
   const a=document.createElement('a');
   a.download=`imvelaphi-${name.toLowerCase().replace(/\s+/g,'-')}.png`;
-  a.href=canvas.toDataURL('image/png');a.click();
+  a.href=canvas.toDataURL('image/png');
+  a.click();
 }
 
-// Live preview
+// ── SHARE FUNCTIONS ───────────────────────────────────────────
+function getShareData(){
+  const name=document.getElementById('fn').value.trim()||'';
+  const url=`${SITE_URL}?ref=namecard&name=${encodeURIComponent(name)}`;
+  const text=name
+    ? `🌍 My name "${name}" is now in the Imvelaphi Naming Wall — the living archive of African names. Generate yours: ${SITE_URL} #NamingWall #WhereAfricaRemembers`
+    : SHARE_TEXT+` ${SITE_URL}`;
+  return {url, text};
+}
+
+function shareToWhatsApp(){
+  const {text}=getShareData();
+  window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
+}
+function shareToFacebook(){
+  const {url}=getShareData();
+  window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}&quote=${encodeURIComponent(SHARE_TEXT)}`, '_blank');
+}
+function shareToX(){
+  const {text}=getShareData();
+  window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`, '_blank');
+}
+function shareToTikTok(){
+  // TikTok doesn't have a direct web share API.
+  // We show a native share sheet which TikTok picks up on mobile.
+  const {text,url}=getShareData();
+  if(navigator.share){
+    navigator.share({title:'Imvelaphi — Where Africa Remembers', text, url})
+      .catch(()=>{});
+  } else {
+    // Fallback: copy link to clipboard
+    navigator.clipboard.writeText(`${text} ${url}`).then(()=>{
+      alert('Link copied! Open TikTok, create a video, and paste this link in your bio or caption.');
+    });
+  }
+}
+
+// ── INSTAGRAM SHARE NOTE ─────────────────────────────────────
+// Instagram doesn't allow web sharing — users must download and upload.
+// The download button + share note handles this.
+
+// ── EMAIL CAPTURE ─────────────────────────────────────────────
+async function saveEmail(){
+  const email=document.getElementById('ne').value.trim();
+  if(!email||!email.includes('@'))return;
+  const btn=document.getElementById('notify-btn');
+  btn.disabled=true;btn.textContent='Saving...';
+  try{
+    await fetch(`${WP_API}/early-access`,{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({email,source:'hero_cta'}),
+    });
+  }catch(e){
+    // Fallback local save
+    const list=JSON.parse(localStorage.getItem('imp_notify')||'[]');
+    if(!list.includes(email))list.push(email);
+    localStorage.setItem('imp_notify',JSON.stringify(list));
+  }
+  document.getElementById('es').style.display='block';
+  document.getElementById('ne').value='';
+  btn.disabled=false;btn.textContent='Claim My Place';
+}
+
+// ── LIVE PREVIEW ──────────────────────────────────────────────
 ['fn','fp','fl','fc','fco','fm','fg'].forEach(id=>{
   const el=document.getElementById(id);
   if(el)el.addEventListener('input',()=>{
